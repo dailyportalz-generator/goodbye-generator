@@ -124,12 +124,12 @@ export default {
   },
   mounted() {
     const params = parse(location.search.replace("?", ""));
-    const isValid = ["name", "title", "q1", "q2", "q3", "q4", "q5", "q6"].every(
+    const isValid = ["name", "title", "sex", "q1", "q2", "q3", "q4", "q5", "q6"].every(
       val => {
         if (!params[val]) {
           return false;
         }
-        if (val != "name" && parseInt(params[val]) < 1) {
+        if (val != "name" && val != "sex" && parseInt(params[val]) < 1) {
           return false;
         }
         return true;
@@ -139,6 +139,7 @@ export default {
       const questions = {
         name: params.name,
         title: parseInt(params.title),
+        sex: parseInt(params.sex),
         q1: parseInt(params.q1),
         q2: parseInt(params.q2),
         q3: parseInt(params.q3),
@@ -147,7 +148,7 @@ export default {
         q6: parseInt(params.q6)
       };
       this.questions = questions;
-      this.step = 7;
+      this.step = 8;
     }
   },
   methods: {
