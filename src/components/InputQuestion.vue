@@ -20,7 +20,7 @@
 </template>
 
 <script>
-import { METHODS } from "http";
+//import { METHODS } from "http";
 export default {
   data() {
     return {
