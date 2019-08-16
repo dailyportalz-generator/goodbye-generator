@@ -5,7 +5,7 @@
       <dt>{{message}}</dt>
       <dd>
         <template v-for="(choice, i) in choices">
-          <label>
+          <label :key='choice'>
             <input type="radio" :value="i+1" :key="choice" v-model="selectedValue">
             {{choice}}
             <br>
